@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/165c65faf9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Plus Weather App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="search-form">
+        <div class="search">
+          <div class="row">
+            <div class="col-7">
+              <input
+                type="search"
+                placeholder="Type city here..."
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-2">
+              <input type="submit" class="btn btn-primary" value="Search" />
+            </div>
+            <div class="col-3">
+              <button class="location-button">
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cityweather">
+          <div class="row">
+            <div class="col-4">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li><h2 id="city-name">HAMBURG</h2></li>
+                <li><span id="current-time">Tuesday 16:00</span></li>
+                <li>
+                  <h1>
+                    <span id="current-temperature">18</span>°<span
+                      id="temperate-unit"
+                      >C</span
+                    >
+                  </h1>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <div class="temp-buttons">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" />
+                    °C
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" /> °F
+                  </label>
+                </div>
+              </div>
+              <ul>
+                <li><span id="weather-description">Cloudy</span></li>
+                <li>Humidity: <span id="humidity">88</span>%</li>
+                <li>Wind: <span id="wind">3</span> km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="day">Mon</div>
+                <div class="temperatureforecast">19°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="day">Tue</div>
+                <div class="temperatureforecast">20°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="day">Wed</div>
+                <div class="temperatureforecast">16°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="day">Thu</div>
+                <div class="temperatureforecast">17°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="day">Fri</div>
+                <div class="temperatureforecast">21°C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="src/index1.js"></script>
+  </body>
+</html>

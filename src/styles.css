@@ -1,0 +1,67 @@
+h1,
+h2 {
+  color: #3f4441;
+  font-weight: lighter;
+}
+
+.cityweather {
+  padding: 10px 20px 20px 20px;
+}
+
+.container {
+  width: 600px;
+  margin: 10px;
+  border: 0.5px solid #e4e3e3;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to top,
+    #f3e7e9 0%,
+    #e3eeff 99%,
+    #e3eeff 100%
+  );
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card {
+  margin: 20px 0 20px 0;
+}
+
+.search {
+  text-align: center;
+  padding: 50px 0px;
+}
+
+.searchfield {
+  margin: 10px;
+  width: 350px;
+  height: 41px;
+  border-radius: 5px;
+}
+
+.searchbutton {
+  padding: 5px;
+  border: 0.5px solid gray;
+  background: white;
+  position: relative;
+  top: 0px;
+  border-radius: 5px;
+}
+
+.location-button {
+  border: 0.5px solid gray;
+  background: white;
+  border-radius: 5px;
+}
+
+.fa-sun {
+  font-size: 100px;
+  color: #3c2aa7;
+  margin: 0 0 0 50px;
+}
+
+span#weather-description {
+  text-transform: capitalize;
+}
