@@ -48,9 +48,9 @@ function showForecast(response) {
   }@2x.png" alt="weather-icon" />
   </div>
   <div class="weather-forecast-temperature">
-  ${Math.round(forecast.main.temp_max)}°C | ${Math.round(
+  ${Math.round(forecast.main.temp_max)}° | ${Math.round(
       forecast.main.temp_min
-    )}°C</small>
+    )}°</small>
     </div>
     </div>
     </div>
@@ -136,14 +136,20 @@ function showCurrentCity(response) {
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let currentTemperature = document.querySelector("#current-temperature");
+  let temperatureUnit = document.querySelector("#temperature-unit");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
   currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+  temperatureUnit.innerHTML = "F";
 }
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let currentTemperature = document.querySelector("#current-temperature");
+  let temperatureUnit = document.querySelector("#temperature-unit");
+
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
+  temperatureUnit.innerHTML = "C";
 }
 
 let celsiusTemperature = null;
