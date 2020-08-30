@@ -23,7 +23,7 @@
       <form id="search-form">
         <div class="search">
           <div class="row">
-            <div class="col-7">
+            <div class="col-9">
               <input
                 type="search"
                 placeholder="Type city here..."
@@ -32,70 +32,153 @@
                 autocomplete="off"
               />
             </div>
-            <div class="col-2">
-              <input type="submit" class="btn btn-primary" value="Search" />
+            <div class="col">
+              <input type="submit" class="btn btn-secondary" value="Search" />
             </div>
-            <div class="col-3">
-              <button class="location-button">
+            <div class="col">
+              <button class="btn btn-outline-secondary" id="location-button">
                 <i class="fas fa-map-marker-alt"></i>
               </button>
             </div>
           </div>
         </div>
-
-        <div class="cityweather">
-          <div class="row">
-            <div class="col-4">
-              <i class="fas fa-sun"></i>
-            </div>
-            <div class="col-4">
-              <ul>
-                <li><h2 id="city-name">HAMBURG</h2></li>
-                <li><span id="current-time">Tuesday 16:00</span></li>
-                <li>
-                  <h1>
-                    <span id="current-temperature">18</span>°<span
-                      id="temperate-unit"
-                      >C</span
-                    >
-                  </h1>
-                </li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <div class="temp-buttons">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-secondary active">
-                    <input type="radio" name="options" id="option1" />
-                    °C
-                  </label>
-                  <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option2" /> °F
-                  </label>
-                </div>
-              </div>
-              <ul>
-                <li><span id="weather-description">Cloudy</span></li>
-                <li>Humidity: <span id="humidity">88</span>%</li>
-                <li>Wind: <span id="wind">3</span> km/h</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="row" id="temperatureforecast1">
-         
-           
-              
-                19°C | 2°C
-              
-            
-          
-          </div>
-        </div>
       </form>
+
+      <div class="cityweather">
+        <div class="row">
+          <div class="col-3">
+            <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              id="icon"
+              alt="clouds"
+            />
+          </div>
+          <div class="col-4">
+            <ul>
+              <li><h2 id="city-name">HAMBURG</h2></li>
+              <li><span id="current-time">Tuesday 16:00</span></li>
+              <li>
+                <h1>
+                  <span id="current-temperature">18</span>°<span
+                    id="temperate-unit"
+                    >C</span
+                  >
+                </h1>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <ul>
+              <li>
+                <div class="temp-buttons">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary active">
+                      <input type="radio" name="options" id="celsius" />
+                      °C
+                    </label>
+                    <label class="btn btn-outline-secondary">
+                      <input type="radio" name="options" id="fahrenheit" /> °F
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li><span id="weather-description">Cloudy</span></li>
+              <li>Humidity: <span id="humidity">88</span>%</li>
+              <li>Wind: <span id="wind">3</span> km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="temperatureforecast1">
+        <div class="col-2.5">
+          <div class="card">
+            <div class="card-body">
+              <small>
+                00:00
+                <div class="icon-image">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt="weather-icon"
+                  />
+                </div>
+                <div class="weather-forecast-temperature">19°C | 2°C</div>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-2.5">
+          <div class="card">
+            <div class="card-body">
+              <small>
+                00:00
+                <div class="icon-image">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt="weather-icon"
+                  />
+                </div>
+                <div class="weather-forecast-temperature">19°C | 2°C</div>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-2.5">
+          <div class="card">
+            <div class="card-body">
+              <small>
+                00:00
+                <div class="icon-image">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt="weather-icon"
+                  />
+                </div>
+                <div class="weather-forecast-temperature">19°C | 2°C</div>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-2.5">
+          <div class="card">
+            <div class="card-body">
+              <small>
+                00:00
+                <div class="icon-image">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt="weather-icon"
+                  />
+                </div>
+                <div class="weather-forecast-temperature">19°C | 2°C</div>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-2.5">
+          <div class="card">
+            <div class="card-body">
+              <small>
+                00:00
+                <div class="icon-image">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt="weather-icon"
+                  />
+                </div>
+                <div class="weather-forecast-temperature">19°C | 2°C</div>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <small class="codeLink"><a href="https://github.com/noctu-code/plusweatherapp">Open-source code</a> by Anh Hoang</small>
+    <small class="codeLink"
+      ><a href="https://github.com/noctu-code/plusweatherapp"
+        >Open-source code</a
+      >
+      by Anh Hoang</small
+    >
     <script src="src/index1.js"></script>
   </body>
 </html>

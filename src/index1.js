@@ -37,14 +37,16 @@ function showForecast(response) {
   for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
-    <div class="col-2">
+    <div class="col-2.5">
     <div class="card">
   <div class="card-body">
     <small>
   ${formatHours(forecast.dt * 1000)}
+  <div class="icon-image">
   <img src="http://openweathermap.org/img/wn/${
     forecast.weather[0].icon
-  }@2x.png" alt="weather-icon" sizes="10px" />
+  }@2x.png" alt="weather-icon" />
+  </div>
   <div class="weather-forecast-temperature">
   ${Math.round(forecast.main.temp_max)}°C | ${Math.round(
       forecast.main.temp_min
@@ -79,6 +81,7 @@ function showCityWeather(response) {
   let descriptionElement = document.querySelector("#weather-description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -87,6 +90,16 @@ function showCityWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
 
 function showCurrentLocation(position) {
@@ -94,12 +107,12 @@ function showCurrentLocation(position) {
   let longitude = position.coords.longitude;
   let apiKey = "285f7dfb6ea9613847e41d2341dd08f1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  axios.get(`${apiUrl}`).then(showCurrentCity);
-}
 
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showCurrentLocation);
+  axios.get(`${apiUrl}`).then(showCurrentCity);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showForecast);
+  console.log(apiUrl);
 }
 
 function showCurrentCity(response) {
@@ -138,11 +151,11 @@ let celsiusTemperature = null;
 let cityName = document.querySelector("#search-form");
 cityName.addEventListener("submit", changeCity);
 
-let currentLocationButton = document.querySelector(".location-button");
+let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-let fahrenheitUnit = document.querySelector("#option2");
+let fahrenheitUnit = document.querySelector("#fahrenheit");
 fahrenheitUnit.addEventListener("click", showFahrenheitTemperature);
 
-let celsiusUnit = document.querySelector("#option1");
+let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", showCelsiusTemperature);

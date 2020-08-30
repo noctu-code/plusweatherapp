@@ -9,7 +9,7 @@ h2 {
 }
 
 .container {
-  width: 800px;
+  width: 715px;
   margin: 10px;
   border: 0.5px solid #e4e3e3;
   border-radius: 10px;
@@ -52,10 +52,8 @@ ul {
   border-radius: 5px;
 }
 
-.fa-sun {
-  font-size: 100px;
-  color: #3c2aa7;
-  margin: 0 0 0 50px;
+.card {
+  margin: 10px 10px;
 }
 
 span#weather-description {
@@ -63,5 +61,19 @@ span#weather-description {
 }
 
 .codeLink {
-  text-align: center;
+  margin: 0px 10px;
+}
+
+.row#temperatureforecast1 img {
+  width: 80px;
+}
+
+.temp-buttons {
+  margin: 0 0 10px 0;
+}
+
+img#icon {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
 }
