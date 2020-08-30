@@ -9,7 +9,7 @@ h2 {
 }
 
 .container {
-  width: 600px;
+  width: 800px;
   margin: 10px;
   border: 0.5px solid #e4e3e3;
   border-radius: 10px;
@@ -23,10 +23,6 @@ h2 {
 
 ul {
   list-style-type: none;
-}
-
-.card {
-  margin: 20px 0 20px 0;
 }
 
 .search {
@@ -64,4 +60,8 @@ ul {
 
 span#weather-description {
   text-transform: capitalize;
+}
+
+.codeLink {
+  text-align: center;
 }
