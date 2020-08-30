@@ -56,6 +56,10 @@ ul {
   margin: 10px 10px;
 }
 
+.card-body small {
+  text-align: center;
+}
+
 span#weather-description {
   text-transform: capitalize;
 }

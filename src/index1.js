@@ -50,7 +50,7 @@ function showForecast(response) {
   <div class="weather-forecast-temperature">
   ${Math.round(forecast.main.temp_max)}° | ${Math.round(
       forecast.main.temp_min
-    )}°</small>
+    )}°C</small>
     </div>
     </div>
     </div>
@@ -59,23 +59,18 @@ function showForecast(response) {
   }
 }
 
-function changeCity(event) {
-  event.preventDefault();
-  let searchedCity = document.querySelector(".form-control");
-  let newCity = document.querySelector("#city-name");
-
-  newCity.innerHTML = `${searchedCity.value.toUpperCase()}`;
-
+function changeCity(city) {
   let apiKey = "285f7dfb6ea9613847e41d2341dd08f1";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity.innerHTML}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showCityWeather);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${newCity.innerHTML}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 
 function showCityWeather(response) {
+  let city = document.querySelector("#city-name");
   let currentTemperature = document.querySelector("#current-temperature");
   let dateElement = document.querySelector("#current-time");
   let descriptionElement = document.querySelector("#weather-description");
@@ -85,6 +80,7 @@ function showCityWeather(response) {
 
   celsiusTemperature = response.data.main.temp;
 
+  city.innerHTML = response.data.name.toUpperCase();
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -165,3 +161,5 @@ fahrenheitUnit.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", showCelsiusTemperature);
+
+changeCity("Hamburg");
