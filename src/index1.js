@@ -59,7 +59,7 @@ function showForecast(response) {
   }
 }
 
-function changeCity(city) {
+function search(city) {
   let apiKey = "285f7dfb6ea9613847e41d2341dd08f1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -67,6 +67,14 @@ function changeCity(city) {
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
+}
+
+function changeCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  search(city);
+  let cityInput = document.querySelector("#city-input");
+  cityInput.value = "";
 }
 
 function showCityWeather(response) {
@@ -162,4 +170,4 @@ fahrenheitUnit.addEventListener("click", showFahrenheitTemperature);
 let celsiusUnit = document.querySelector("#celsius");
 celsiusUnit.addEventListener("click", showCelsiusTemperature);
 
-changeCity("Hamburg");
+search("Hamburg");
